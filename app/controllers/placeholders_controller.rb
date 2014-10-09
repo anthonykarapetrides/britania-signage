@@ -1,0 +1,5 @@
+class PlaceholdersController < ApplicationController
+
+
+
+end

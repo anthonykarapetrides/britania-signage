@@ -1,0 +1,127 @@
+<div class="row">
+  <div class="col-lg-4">
+    <div class="col-lg-4">
+      <%= image_tag 'new_logo_britania_2.png' %>
+    </div>
+    <div class="col-lg-8">
+      <div class="date_here text-center">
+        <% time_now = DateTime.now %>
+        <h3 style="margin-top: 10px;">
+          <% day = time_now.day %>
+          <%= time_now.strftime("%A") %><br>
+          <%= time_now.strftime("#{day.ordinalize} %B %Y") %>
+        </h3>
+        <h3 style="margin-top: 10px;">
+          <span class="text-muted time_here"><%= time_now.strftime('%H:%M:%S') %></span>
+        </h3>
+      </div>
+    </div>
+
+  </div>
+  <div class="col-lg-8 text-center">
+    <div id="weather">
+      <div class="col-lg-5">
+        <div id="weather_now">
+          <div class="row">
+            <div class="col-lg-6"><img class="weather_img" src=""></div>
+            <div class="col-lg-6 text-left">
+              <h2 style="margin-top: 2px; margin-bottom: 0px;">
+                <span class="temp"></span><br>
+                <small>
+                  <span class="condition"></span><br>
+                  <small>
+                    Feels Like <span class="heatindex"></span>
+                  </small>
+                </small>
+
+              </h2>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-7">
+        <div id="weather_forecast">
+          <div class="col-md-3 day1">
+            <strong><span class="day_name"></span></strong><br>
+            <img class="weather_img" src="">
+            <span class="temps small text-muted"></span>
+          </div>
+          <div class="col-md-3 day2">
+            <strong><span class="day_name"></span></strong><br>
+            <img class="weather_img" src="">
+            <span class="temps small text-muted"></span>
+          </div>
+          <div class="col-md-3 day3">
+            <strong><span class="day_name"></span></strong><br>
+            <img class="weather_img" src="">
+            <span class="temps small text-muted"></span>
+          </div>
+          <div class="col-md-3 day4">
+            <strong><span class="day_name"></span></strong><br>
+            <img class="weather_img" src="">
+            <span class="temps small text-muted"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-lg-6">
+    <div class="well">
+      <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+        <!-- Indicators -->
+        <div class="carousel-inner">
+          <% imgs = ["images/1.jpg", "images/2.jpg", "images/3.jpg"] %>
+          <% public_dir = 'https://dl.dropboxusercontent.com/u/18179685/' %>
+          <% imgs.each_with_index do |img, i| %>
+              <div class="item <%= 'active' if i == 0 %>">
+                <%= image_tag (public_dir + img) %>
+              </div>
+          <% end %>
+          <!--<div class="item active">-->
+            <!--<%#= image_tag 'new_logo_britania_1.png' %>-->
+          <!--</div>-->
+          <!--<div class="item">-->
+            <!--<%#= image_tag 'new_logo_britania_2.png' %>-->
+          <!--</div>-->
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-6">
+    <div class="well">
+      <div id="calendar"></div>
+      <!--feed: -->
+
+    </div>
+  </div>
+</div>
+<div class="row">
+  <strong>
+    <span class="wod"></span>
+  </strong>
+  <!--content by TheFreeDictionary.com-->
+  <script type="text/javascript" src="http://www.thefreedictionary.com/_/WoD/jsa.aspx" charset="UTF-8"></script>
+  <script type="text/javascript">
+      $('span.wod').html(WordOfTheDay[0]);
+      /*write your own rendering code using the Javascript array received above.
+       for other content modify array URL as follows:
+       For Article of the Day: jsa.aspx?type=article
+       For Today's Birthday: jsa.aspx?type=birthday
+       For Today's Holiday: jsa.aspx?type=holiday
+       For This Day in History: jsa.aspx?type=history
+       For Quote of the Day: jsa.aspx?type=quote
+       Match Up and Hangman are not available in this format
+       */
+
+  </script>
+  <!--end of TFD content-->
+</div>
+
+<script type="text/javascript">
+    weather_widget.update_weather();
+    time.auto_update();
+    calendar.init();
+
+</script>

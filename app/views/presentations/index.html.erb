@@ -1,0 +1,29 @@
+<h3>
+  Presentations
+  <div class="pull-right">
+    <%= link_to 'New', new_presentation_path, :class => 'btn btn-primary' %>
+  </div>
+</h3>
+
+<table class="table">
+  <thead>
+  <tr>
+    <th>Name</th>
+    <th>Created</th>
+    <th>Actions</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @presentations.each do |p| %>
+      <tr>
+        <td><%= link_to p.name, presentation_path(p) %></td>
+        <td><%= p.created_at %></td>
+        <td>
+          <%= link_to 'Edit', edit_presentation_path(p), :class => 'btn btn-default btn-sm' %>
+          <%= link_to 'Delete', presentation_path(p), :method => :delete, :class => 'btn btn-default btn-sm', :data => {:confirm => 'Are you sure?'} %>
+          <%= link_to 'Present', present_presentation_path(p), :class => 'btn btn-success btn-sm' %>
+        </td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>

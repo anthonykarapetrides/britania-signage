@@ -1,0 +1,12 @@
+<%= simple_form_for @presentation, :html => {:class => 'form-horizontal'}, :defaults => {:label_html => {:class => 'col-sm-3'}}, :wrapper => :bootstrap3_horizontal do |f| %>
+    <div class="col-md-8 col-md-offset-2">
+      <%= f.input :name %>
+
+      <div class="col-md-offset-2">
+        <%= f.submit :class => 'btn btn-success' %>
+      </div>
+
+    </div>
+
+
+<% end %>
