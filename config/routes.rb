@@ -8,4 +8,9 @@ Rails.application.routes.draw do
     end
     resources :placeholders
   end
+  resources :placeholders do
+    collection do
+      get :news_rss
+    end
+  end
 end
