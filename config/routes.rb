@@ -10,7 +10,8 @@ Rails.application.routes.draw do
   end
   resources :placeholders do
     collection do
-      get :news_rss
+      get :news_feed
+      get :get_feed_content
     end
   end
 end

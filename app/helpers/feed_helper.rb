@@ -6,8 +6,14 @@ module FeedHelper
     {:title => title, :description => description, :img_url => url}
   end
 
+  def nameday_parser(response)
+    parsed = Nokogiri.parse(response)
+    description = parsed.xpath('//channel//item//description').text
+    {:description => description}
+  end
+
   def description_cleaner(description)
-    descr = description.gsub(/<a [\w\s\W]+>Discuss<\/a>/, '').gsub('\n','').gsub('\t','')
+    descr = description.gsub(/Discuss/, '').gsub('\n','').gsub('\t','').gsub('<br clear="all"/>','')
     url = URI.extract(descr, 'http').try(:first)
     descr = descr.gsub(/<img [\w\s\W]+ \/>/, '')
     return descr, url

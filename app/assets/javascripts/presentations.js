@@ -88,3 +88,89 @@ var calendar = {
         })
     }
 };
+
+var news_feed = {
+    init: function(){
+        var news_feed = $('#news_feed_here');
+        $.ajax({
+            async: true,
+            url: "/placeholders/news_feed.json",
+            type: "get",
+            success: function (items) {
+                console.log('success');
+                var out = "<p>";
+                $.each(items, function(index, item){
+                    out += '<img class="img-responsive" src="/assets/britania_icon_sm.png" style="height: 15px; margin-top: -3px; display: inline-block;"> <strong>' + item.title + ':</strong> ' + item.description;
+                });
+                out += '</p>';
+                news_feed.html(out);
+                news_feed.marquee({
+                    duration: 15000,
+                    allowCss3Support: true,
+                    css3easing: 'linear',
+                    pauseOnHover: false
+                });
+
+            },
+            error: function (data) {
+                console.log('error');
+                console.log(data);
+            }
+        });
+    }
+};
+
+var feed_content = {
+    init: function(){
+        feed_content.word();
+        feed_content.quote();
+        feed_content.namedays();
+    },
+
+    get_content: function(option){
+        var item;
+
+        $.ajax({
+            async: false,
+            url: '/placeholders/get_feed_content.json',
+            data: {option: option},
+            type: "get",
+            success: function (data) {
+                item = data;
+            },
+            error: function (data) {
+                console.log('error');
+                console.log(data);
+            }
+        });
+        return item;
+    },
+
+    word: function(){
+        var wotd = feed_content.get_content('wotd');
+        console.log(wotd);
+        var html = '<div class="media"><div class="media-body"><h4 class="media-heading">' +
+            wotd.title + '</h4>'+ wotd.description + '</div></div>';
+        $('#wotd').html(html);
+    },
+
+    quote: function(){
+        var qotd = feed_content.get_content('qotd');
+        console.log(qotd);
+        var html = '<div class="media"><a class="pull-left" href="#">' +
+            '<img class="media-object img-thumbnail" src="'+qotd.img_url+'" ></a><div class="media-body">' +
+            '<blockquote class="blockquote-reverse blockquote-slim"><p>' + qotd.description +
+            '</p><footer>' + qotd.title +
+            '</footer></blockquote>' +
+             '</div></div>';
+        $('#qotd').html(html);
+    },
+
+    namedays: function(){
+        var ndays = feed_content.get_content('ndays');
+        console.log(ndays);
+        var html = '<div class="media"><div class="media-body">' +
+            ndays.description + '</div></div>';
+        $('#ndays').html(html);
+    }
+};
