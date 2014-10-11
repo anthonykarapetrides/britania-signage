@@ -71,7 +71,7 @@ var calendar = {
     init: function(){
         var earlierTimeText = calendar.getTimeText();
         $('#calendar').fullCalendar({
-            events: 'https://www.google.com/calendar/feeds/antholio%40gmail.com/public/basic',
+            events: 'https://www.google.com/calendar/feeds/antholio%40gmail.com/private-d01402b714d835385052f15ab9bf8c20/basic',
             header: {
                 left:   '',
                 center: '',
