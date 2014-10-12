@@ -21,7 +21,7 @@
         <td>
           <%= link_to 'Edit', edit_presentation_path(p), :class => 'btn btn-default btn-sm' %>
           <%= link_to 'Delete', presentation_path(p), :method => :delete, :class => 'btn btn-default btn-sm', :data => {:confirm => 'Are you sure?'} %>
-          <%= link_to 'Present', present_presentation_path(p), :class => 'btn btn-success btn-sm' %>
+          <%= link_to 'Play', play_presentation_path(p), :class => 'btn btn-success btn-sm' %>
         </td>
       </tr>
   <% end %>
