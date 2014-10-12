@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :users
   resources :presentations do
     member do
-      get :present
+      get :play
     end
     resources :placeholders
   end

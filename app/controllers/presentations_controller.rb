@@ -49,7 +49,7 @@ class PresentationsController < ApplicationController
 
   end
 
-  def present
+  def play
 
   end
 
