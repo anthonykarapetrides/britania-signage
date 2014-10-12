@@ -1,7 +1,7 @@
 class PresentationsController < ApplicationController
   before_filter :find_presentation, :only => [:edit, :update, :destroy]
 
-  layout 'presentation', :only => [:present]
+  layout 'presentation', :only => [:play]
 
   def index
     @presentations = Presentation.order(:created_at)
