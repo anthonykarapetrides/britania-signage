@@ -76,7 +76,7 @@
           <% public_dir = 'https://dl.dropboxusercontent.com/u/18179685/' %>
           <% imgs.each_with_index do |img, i| %>
               <div class="item <%= 'active' if i == 0 %>">
-                <%= image_tag (public_dir + img), :class => 'img-responsive' %>
+                <%= image_tag (public_dir + img), :class => 'img-responsive', :style => 'max-height: 200px;' %>
               </div>
           <% end %>
           <!--<div class="item active">-->

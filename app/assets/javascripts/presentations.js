@@ -84,6 +84,7 @@ var calendar = {
                 day: 'dddd'      // Monday
             },
             minTime: earlierTimeText,
+            maxTime: "13:00:00",
             allDaySlot: false
         })
     }
