@@ -71,7 +71,7 @@ var calendar = {
     init: function(){
         var earlierTimeText = calendar.getTimeText();
         $('#calendar').fullCalendar({
-            events: 'https://www.google.com/calendar/feeds/antholio%40gmail.com/private-d01402b714d835385052f15ab9bf8c20/basic',
+            events: 'https://www.google.com/calendar/feeds/britanialanguageschool%40gmail.com/private-5ecd31037914e801b1b71ec4a428e501/basic',
             header: {
                 left:   '',
                 center: '',
@@ -83,6 +83,7 @@ var calendar = {
                 week: 'ddd M/D', // Mon 9/7
                 day: 'dddd'      // Monday
             },
+            slotDuration: '00:15:00',
             minTime: earlierTimeText,
             maxTime: "13:00:00",
             allDaySlot: false
