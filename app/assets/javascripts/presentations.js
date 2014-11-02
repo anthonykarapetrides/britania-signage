@@ -173,9 +173,9 @@ var feed_content = {
     var qotd = feed_content.get_content('qotd');
     console.log(qotd);
     var qotd_div = $('#qotd');
-    qotd.find('.title_here').html(qotd.title);
-    qotd.find('img.image_here').attr('src', qotd.img_url);
-    qotd.find('p.description_here').html(qotd.description);
+    qotd_div.find('.title_here').html(qotd.title);
+    qotd_div.find('img.image_here').attr('src', qotd.img_url);
+    qotd_div.find('p.description_here').html(qotd.description);
   },
 
   namedays: function(){
