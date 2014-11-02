@@ -67,11 +67,6 @@ var time = {
 };
 
 var calendar = {
-  getTimeText: function(){
-    var timeNow = new Date();
-    var hours = timeNow.getHours() - 1;
-    return hours + ":00:00";
-  },
 
   init: function(){
     var min_time = moment().startOf('hour');
