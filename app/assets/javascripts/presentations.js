@@ -164,28 +164,24 @@ var feed_content = {
   word: function(){
     var wotd = feed_content.get_content('wotd');
     console.log(wotd);
-    var html = '<div class="media"><div class="media-body"><h4 class="media-heading">' +
-    wotd.title + '</h4>'+ wotd.description + '</div></div>';
-    $('#wotd').html(html);
+    var wotd_div = $('#wotd');
+    wotd_div.find('.title_here').html(wotd.title);
+    wotd_div.find('.description_here').html(wotd.description);
   },
 
   quote: function(){
     var qotd = feed_content.get_content('qotd');
     console.log(qotd);
-    var html = '<div class="media"><a class="pull-left" href="#">' +
-    '<img class="media-object img-thumbnail" src="'+qotd.img_url+'" ></a><div class="media-body">' +
-    '<blockquote class="blockquote-reverse blockquote-slim"><p>' + qotd.description +
-    '</p><footer>' + qotd.title +
-    '</footer></blockquote>' +
-    '</div></div>';
-    $('#qotd').html(html);
+    var qotd_div = $('#qotd');
+    qotd.find('.title_here').html(qotd.title);
+    qotd.find('img.image_here').attr('src', qotd.img_url);
+    qotd.find('p.description_here').html(qotd.description);
   },
 
   namedays: function(){
     var ndays = feed_content.get_content('ndays');
     console.log(ndays);
-    var html = '<div class="media"><div class="media-body">' +
-    ndays.description + '</div></div>';
-    $('#ndays').html(html);
+    var ndays_div = $('#ndays');
+    ndays_div.find('.description_here').html(ndays.description);
   }
 };

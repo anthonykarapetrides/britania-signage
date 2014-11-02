@@ -75,15 +75,15 @@
           <% imgs = ["images/1.jpg", "images/2.jpg", "images/3.jpg"] %>
           <% public_dir = 'https://dl.dropboxusercontent.com/u/195982051/' %>
           <% imgs.each_with_index do |img, i| %>
-              <div class="item <%= 'active' if i == 0 %>">
-                <%= image_tag (public_dir + img), :class => 'img-responsive', :style => 'max-height: 200px;' %>
-              </div>
+          <div class="item <%= 'active' if i == 0 %>">
+            <%= image_tag (public_dir + img), :class => 'img-responsive', :style => 'max-height: 200px;' %>
+          </div>
           <% end %>
           <!--<div class="item active">-->
-            <!--<%#= image_tag 'new_logo_britania_1.png' %>-->
+          <!--<%#= image_tag 'new_logo_britania_1.png' %>-->
           <!--</div>-->
           <!--<div class="item">-->
-            <!--<%#= image_tag 'new_logo_britania_2.png' %>-->
+          <!--<%#= image_tag 'new_logo_britania_2.png' %>-->
           <!--</div>-->
         </div>
       </div>
@@ -98,31 +98,52 @@
 
 <div class="row">
   <div class="col-lg-4">
-    <div class="panel panel-small panel-default">
+    <div id="wotd" class="panel panel-small panel-default">
       <div class="panel-heading">
-        <h3 class="panel-title">Word of the Day</h3>
+        <h3 class="panel-title">
+          <small>Word of the day</small>
+          <span class="pull-right title_here"></span>
+        </h3>
       </div>
-      <div id="wotd" class="panel-body">
+      <div class="panel-body">
+        <div class="media">
+          <div class="media-body description_here">
+          </div>
+        </div>
       </div>
     </div>
   </div>
   <div class="col-lg-4">
-    <div class="panel panel-small panel-default">
+    <div id="qotd" class="panel panel-small panel-default">
       <div class="panel-heading">
-        <h3 class="panel-title">Quote of the Day</h3>
+        <h3 class="panel-title">
+          <small>Quote of the day</small>
+          <span class="pull-right title_here"></span>
+        </h3>
       </div>
-      <div id="qotd" class="panel-body">
-
+      <div class="panel-body">
+        <div class="media">
+          <a class="pull-left" href="#">
+            <img class="media-object img-thumbnail image_here" src="" >
+          </a>
+          <div class="media-body">
+            <blockquote class="blockquote-reverse blockquote-slim">
+              <p class="description_here"></p>
+            </blockquote>
+          </div>
+        </div>
       </div>
     </div>
   </div>
   <div class="col-lg-4">
-    <div class="panel panel-small panel-default">
+    <div id="ndays" class="panel panel-small panel-default">
       <div class="panel-heading">
-        <h3 class="panel-title">Today's Namedays</h3>
+        <h3 class="panel-title"><small>Today's Namedays</small></h3>
       </div>
-      <div id="ndays" class="panel-body">
-
+      <div class="panel-body">
+        <div class="media">
+          <div class="media-body description_here"></div>
+        </div>
       </div>
     </div>
   </div>
@@ -135,9 +156,9 @@
 </div>
 
 <script type="text/javascript">
-    weather_widget.init();
-    time.auto_update();
-    calendar.init();
-    news_feed.init();
-    feed_content.init();
+weather_widget.init();
+time.auto_update();
+calendar.init();
+news_feed.init();
+feed_content.init();
 </script>
