@@ -89,7 +89,7 @@ var calendar = {
         week: 'ddd M/D', // Mon 9/7
         day: 'dddd'      // Monday
       },
-      minTime: earlierTimeText,
+      minTime: moment().startOf('hour'),
       maxTime: "22:00:00",
       allDaySlot: false
     })
