@@ -76,7 +76,7 @@ var calendar = {
   init: function(){
     var earlierTimeText = calendar.getTimeText();
     $('#calendar').fullCalendar({
-      slotDuration: '00:15:00',
+      slotDuration: '00:05:00',
       events: 'https://www.google.com/calendar/feeds/britanialanguageschool%40gmail.com/private-5ecd31037914e801b1b71ec4a428e501/basic',
       header: {
         left:   '',
