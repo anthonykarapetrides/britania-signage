@@ -88,9 +88,9 @@ var calendar = {
         week: 'ddd M/D', // Mon 9/7
         day: 'dddd'      // Monday
       },
-      slotDuration: '00:15:00',
       minTime: earlierTimeText,
-      //maxTime: "13:00:00",
+      maxTime: "22:00:00",
+      slotDuration: '00:15:00',
       allDaySlot: false
     })
   }
