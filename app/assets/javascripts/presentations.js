@@ -74,9 +74,10 @@ var calendar = {
   },
 
   init: function(){
-    var earlierTimeText = calendar.getTimeText();
+    var min_time = moment().startOf('hour');
+    var duration = moment.duration(15, 'minutes');
     $('#calendar').fullCalendar({
-      slotDuration: moment.duration(15, 'minutes'),
+      slotDuration: duration,
       events: 'https://www.google.com/calendar/feeds/britanialanguageschool%40gmail.com/private-5ecd31037914e801b1b71ec4a428e501/basic',
       header: {
         left:   '',
@@ -89,7 +90,7 @@ var calendar = {
         week: 'ddd M/D', // Mon 9/7
         day: 'dddd'      // Monday
       },
-      minTime: moment().startOf('hour'),
+      minTime: min_time,
       maxTime: "22:00:00",
       allDaySlot: false
     })
