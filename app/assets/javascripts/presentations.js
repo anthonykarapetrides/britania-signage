@@ -67,10 +67,22 @@ var time = {
 };
 
 var calendar = {
+  getMinTimeText: function(){
+    var timeNow = new Date();
+    var hours = timeNow.getHours();
+    return hours + ":00:00";
+  },
+
+  getMaxTimeText: function(){
+    var timeNow = new Date();
+    var hours = timeNow.getHours() + 4;
+    return hours + ":00:00";
+  },
 
   init: function(){
-    var min_time = moment().startOf('hour');
-    var duration = moment.duration(15, 'minutes');
+    var min_time = calendar.getMinTimeText();
+    var max_time = calendar.getMaxTimeText();
+    var duration = '00:15:00'
     $('#calendar').fullCalendar({
       slotDuration: duration,
       events: 'https://www.google.com/calendar/feeds/britanialanguageschool%40gmail.com/private-5ecd31037914e801b1b71ec4a428e501/basic',
@@ -86,7 +98,7 @@ var calendar = {
         day: 'dddd'      // Monday
       },
       minTime: min_time,
-      maxTime: "22:00:00",
+      maxTime: max_time,
       allDaySlot: false
     })
   }
