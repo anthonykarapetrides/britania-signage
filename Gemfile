@@ -12,6 +12,7 @@ gem 'spring',        group: :development
 gem 'bootstrap-sass'
 gem 'devise'
 gem 'pg'
+gem 'exception_notification'
 gem 'simple_form'
 gem 'therubyracer', :platform=>:ruby
 gem "dropbox-api"
