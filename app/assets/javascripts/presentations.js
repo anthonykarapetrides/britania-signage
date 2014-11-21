@@ -187,7 +187,20 @@ var feed_content = {
 };
 
 var carousel_imgs = {
-  get_images: function(){
+  init: function(){
+    $.ajax({
+      async: false,
+      url: '/placeholders/get_carousel_photos.js',
+      type: "get",
+      success: function (data) {
+        $('.carousel').carousel({
+          wrap: true,
+          keyboard: false
+        });
+      },
+      error: function (data) {
 
+      }
+    });
   }
 };

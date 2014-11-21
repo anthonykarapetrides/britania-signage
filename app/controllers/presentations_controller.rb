@@ -5,24 +5,10 @@ class PresentationsController < ApplicationController
 
   def index
     @presentations = Presentation.order(:created_at)
-    consumer = Dropbox::API::OAuth.consumer(:authorize)
-request_token = consumer.get_request_token
-# Store the token and secret so after redirecting we have the same request token
-session[:token] = request_token.token
-session[:token_secret] = request_token.secret
-@which_url = request_token.authorize_url(:oauth_callback => 'http://britania-signage.herokuapp.com/presentations/new')
-# Here the user goes to Dropbox, authorizes the app and is redirected
-# This would be typically run in a Rails controller
-
   end
 
   def new
     @presentation = Presentation.new
-    consumer = Dropbox::API::OAuth.consumer(:authorize)
-    hash = { oauth_token: session[:token], oauth_token_secret: session[:token_secret]}
-    request_token  = OAuth::RequestToken.from_hash(consumer, hash)
-    oauth_verifier = params[:oauth_token]
-    @result = request_token.get_access_token(:oauth_verifier => oauth_verifier)
   end
 
   def create

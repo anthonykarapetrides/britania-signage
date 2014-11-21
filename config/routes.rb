@@ -12,6 +12,7 @@ Rails.application.routes.draw do
     collection do
       get :news_feed
       get :get_feed_content
+      get :get_carousel_photos
     end
   end
 end
