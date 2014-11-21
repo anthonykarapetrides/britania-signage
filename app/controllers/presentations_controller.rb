@@ -21,7 +21,7 @@ session[:token_secret] = request_token.secret
     hash = { oauth_token: session[:token], oauth_token_secret: session[:token_secret]}
     request_token  = OAuth::RequestToken.from_hash(consumer, hash)
     oauth_verifier = params[:oauth_verifier]
-    result = request_token.get_access_token(:oauth_verifier => oauth_verifier)
+    @result = request_token.get_access_token(:oauth_verifier => oauth_verifier)
   end
 
   def create
