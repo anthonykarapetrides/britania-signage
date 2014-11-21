@@ -199,7 +199,7 @@ var carousel_imgs = {
         });
       },
       error: function (data) {
-
+        console.log(data);
       }
     });
   }
