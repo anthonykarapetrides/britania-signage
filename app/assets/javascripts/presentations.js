@@ -185,3 +185,9 @@ var feed_content = {
     ndays_div.find('.description_here').html(ndays.description);
   }
 };
+
+var carousel_imgs = {
+  get_images: function(){
+
+  }
+};
