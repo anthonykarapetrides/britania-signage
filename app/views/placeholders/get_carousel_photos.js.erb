@@ -1,0 +1,3 @@
+<% if @images.present? %>
+  $('.carousel-inner').html('<%= j(render 'placeholders/carousel_photos', :images => @images, :public_dir => @public_dir) %>');
+<% end %>

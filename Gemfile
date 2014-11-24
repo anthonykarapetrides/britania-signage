@@ -17,6 +17,7 @@ gem 'simple_form'
 gem 'therubyracer', :platform=>:ruby
 gem "dropbox-api"
 gem 'fullcalendar-rails'
+gem 'momentjs-rails'
 gem 'httparty'
 gem 'nokogiri'
 group :development do

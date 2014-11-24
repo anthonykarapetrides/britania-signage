@@ -23,7 +23,7 @@ class PlaceholdersController < ApplicationController
     client = Dropbox::API::Client.new(:token  => 'hdtci8i08dsyxndt', :secret => 'scfkcdn36wf341j')
     @public_dir = 'https://dl.dropboxusercontent.com/u/195982051/'
     images = client.ls 'public/images'
-    @images = images.collect(&:path)
+    @images = images.collect{|x| x.path.sub('public/', '')}
     respond_to do |format|
       format.js{}
     end
