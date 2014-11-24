@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 ruby '2.1.5'
-gem 'rails', '4.1.6'
+gem 'rails', '4.1.8'
 gem 'sass-rails', '~> 4.0.3'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
@@ -12,7 +12,7 @@ gem 'spring',        group: :development
 gem 'bootstrap-sass'
 gem 'devise'
 gem 'pg'
-#gem 'exception_notification'
+gem 'exception_notification'
 gem 'simple_form'
 gem 'therubyracer', :platform=>:ruby
 gem "dropbox-api"
